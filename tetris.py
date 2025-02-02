@@ -226,7 +226,7 @@ class Tetris:
             self.is_rotating = False  # Reset the rotation flag
             return  # Do not rotate squares
 
-        print(self.figure)
+        print("Rotating Figure")
         center = self.figure[0]  # Pivot block
         figure_old = deepcopy(self.figure)  # Save original state before rotating
 
@@ -295,15 +295,18 @@ class Tetris:
 
 
     def move_left(self):
+        print("Move Left Figure")
         self.dx = -1
         self.move_horizontally()
 
     def move_right(self):
+        print("Move Right Figure")
         self.dx = 1
         self.move_horizontally()
 
     def drop(self):
         """Make the piece drop immediately to the lowest available position."""
+        print("Dropping Figure")
         while all(self.is_within_boundary(i) for i in range(4)):
             for i in range(4):
                 self.figure[i].y += 1  # Move down

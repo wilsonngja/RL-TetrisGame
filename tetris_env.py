@@ -31,17 +31,12 @@ class TetrisEnv(gym.Env):
         # Execute action
         if action == 0:
             self.game.move_left()
-            
         elif action == 1:
             self.game.move_right()
-            reward += 1
         elif action == 2:
             self.game.rotate_figure()
-            reward += 1
-            reward += 3
         elif action == 3:
             self.game.drop()
-            reward += 5
 
         # Simulate gravity
         self.game.move_vertically()
@@ -65,7 +60,7 @@ class TetrisEnv(gym.Env):
         # grid = self.game.get_grid()
         observation = self.game.get_grid()
 
-        print("Observation shape in step:", observation.shape)  # Debugging
+        # print("Observation shape in step:", observation.shape)  # Debugging
 
         return self.get_observation(), reward, done, {}
     

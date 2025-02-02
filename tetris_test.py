@@ -3,7 +3,7 @@ from stable_baselines3 import PPO
 from tetris_env import TetrisEnv
 
 # Load trained model
-model = PPO.load("best_model/ppo_tetris_final.zip")  # Ensure the model file exists
+model = PPO.load("checkpoints/ppo_tetris_300000_steps.zip")  # Ensure the model file exists
 
 # Create the Tetris environment
 env = TetrisEnv()
